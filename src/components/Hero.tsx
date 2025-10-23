@@ -329,7 +329,7 @@ export default function Hero({ onUnlock }: HeroProps) {
                 </p>
                 
                 <p>
-                  I just want to say that you are actually the best thing that has ever happened to me. I'm so grateful to have you in my life. Through all of our ups and downs, you've taught me so much. You've helped me believe in myself. You've always been the one I work hard for because I want to grow and be better — for you.
+                  I just want to say that you are actually the best thing that has ever happened to me. I'm so grateful to have you in my life. Through all of our ups and downs, you've taught me so much. You've helped me believe in myself. You've always been the one I work hard for because I want to grow and be better for you.
                 </p>
                 
                 <p>
@@ -337,11 +337,15 @@ export default function Hero({ onUnlock }: HeroProps) {
                 </p>
                 
                 <p>
-                  I know we've had our poopy times, but I really hope everything feels different now and better in your eyes. I wish I could be there with you today, but we're going to celebrate like crazy on Saturday.
+                  I want you to know that I'm so proud of you every single day. You are so strong, and watching you grow your business gives me so much confidence. I know you tend to doubt yourself sometimes, but the truth is you are already so successful. You don't even realize how many people you inspire, including me. You are the best thing ever. You work so hard, and no day goes unnoticed. I know with all my heart that you will be an incredible mother because of how strong and loving you are.
                 </p>
                 
                 <p>
-                  I wuv you so much, my bubu. I can't wait to spend the rest of our lives together — to raise our little dugus and bugus. I can't wait to marry you.
+                  I know we've had our poopy times, but I really hope everything feels different now and better in your eyes. I wish I could be there with you today. But we're going to celebrate like crazy on Saturday.
+                </p>
+                
+                <p>
+                  I wuv you so much, my bubu. I can't wait to spend the rest of our lives together. I can't wait to raise our little dugus and bugus. I can't wait to marry you.
                 </p>
                 
                 <div className="text-right mt-8">

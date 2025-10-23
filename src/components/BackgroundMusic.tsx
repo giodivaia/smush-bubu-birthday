@@ -7,7 +7,7 @@ export default function BackgroundMusic() {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   // Your romantic song - replace with your music file
-  const audioSrc = "/music/birthday-song.mp3" // Put your music file in public/music/ folder
+  const audioSrc = "/music/birthday-song-md.mp3" // Put your music file in public/music/ folder
 
   const togglePlay = () => {
     if (audioRef.current) {

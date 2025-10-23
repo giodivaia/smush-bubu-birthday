@@ -23,7 +23,7 @@ export default function OurSongs() {
       id: 3,
       title: "Afraid To Feel",
       src: "/music/afraid-to-feel.mp3",
-      description: "Perfect for our late night talks"
+      description: "Our first house song 🏠"
     }
   ]
 

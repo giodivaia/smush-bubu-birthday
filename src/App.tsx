@@ -4,6 +4,7 @@ import Hero from "./components/Hero"
 import TapHouse from "./components/TapHouse"
 import PhotoGallery from "./components/PhotoGallery"
 import Timeline from "./components/Timeline"
+import OurSongs from "./components/OurSongs"
 import Future from "./components/Future"
 import BackgroundMusic from "./components/BackgroundMusic"
 import RosePetals from "./components/RosePetals"
@@ -21,6 +22,7 @@ export default function App() {
             <TapHouse />
             <PhotoGallery />
             <Timeline />
+            <OurSongs />
             <Future />
           </>
         )}

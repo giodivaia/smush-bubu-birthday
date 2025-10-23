@@ -1,8 +1,47 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function OurSongs() {
   const [showPlaylist, setShowPlaylist] = useState(false)
+  const [currentSong, setCurrentSong] = useState<string | null>(null)
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  const songs = [
+    {
+      id: 1,
+      title: "Bubu Dudu",
+      src: "/music/bubu-dudu.mp3",
+      description: "Our special song 💕"
+    },
+    {
+      id: 2,
+      title: "Die For You",
+      src: "/music/die-for-you.mp3",
+      description: "This song hits different when I think of you"
+    },
+    {
+      id: 3,
+      title: "Afraid To Feel",
+      src: "/music/afraid-to-feel.mp3",
+      description: "Perfect for our late night talks"
+    }
+  ]
+
+  const playSong = (songSrc: string) => {
+    if (audioRef.current) {
+      audioRef.current.src = songSrc
+      audioRef.current.play()
+      setCurrentSong(songSrc)
+    }
+  }
+
+  const stopSong = () => {
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.currentTime = 0
+      setCurrentSong(null)
+    }
+  }
 
   return (
     <section id="songs" className="py-24">
@@ -68,14 +107,45 @@ export default function OurSongs() {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="text-center text-white/80 py-8">
-                    <div className="text-4xl mb-4">🎵</div>
-                    <p className="text-lg">More songs coming soon...</p>
-                    <p className="text-sm text-white/60 mt-2">
-                      I'll be adding our favorite songs that remind me of us
-                    </p>
-                  </div>
+                  {songs.map((song, index) => (
+                    <motion.div
+                      key={song.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
+                          <span className="text-gold text-lg">🎵</span>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-white">{song.title}</h4>
+                          <p className="text-sm text-white/70">{song.description}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        {currentSong === song.src ? (
+                          <button
+                            onClick={stopSong}
+                            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                          >
+                            ⏹️ Stop
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => playSong(song.src)}
+                            className="px-4 py-2 bg-gold text-ink rounded-lg hover:bg-gold/80 transition-colors"
+                          >
+                            ▶️ Play
+                          </button>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
+                
+                <audio ref={audioRef} />
               </motion.div>
             </motion.div>
           )}
